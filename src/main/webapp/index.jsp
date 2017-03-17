@@ -1,5 +1,5 @@
 <html>
 <body>
-<h2>Jenkins Integration successful!</h2>
+<h2>hiii we are ready now!</h2>
 </body>
 </html>
