@@ -1,6 +1,7 @@
 node('aws_node1') { 
     stage('Checkout'){
-       git 'git@github.com:nbodhe/SampleWebApplication.git'
+       
+       git branch: 'develop', url: "git@github.com:nbodhe/SampleWebApplication.git"
     }
     stage('Build') { 
         sh 'mvn clean install package' 
