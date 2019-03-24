@@ -1,1 +1,1 @@
-testing jenkins multibranch pipeline job
+testing jenkins multibranch pipeline
