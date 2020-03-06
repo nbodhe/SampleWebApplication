@@ -18,14 +18,5 @@
     </server>
   </servers>
 
-  <mirrors>
-    <mirror>
-      <id>central</id>
-      <name>central</name>
-      <url>http://52.224.219.77:8081/repository/maven-snapshots/</url>
-      <mirrorOf>*</mirrorOf>
-    </mirror>
-  </mirrors>
-
 </settings>
 
