@@ -1,0 +1,50 @@
+on: [push]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    
+    - uses: azure/docker-login@v1
+      with:
+        login-server: nikhilbodhe.azurecr.io
+        username: ${{ secrets.acr_nikhilbodhe_username }}
+        password: ${{ secrets.acr_nikhilbodhe_password }}
+    
+    - name: Build and push image to ACR
+      id: build-image
+      run: |
+        docker build "$GITHUB_WORKSPACE/" -f  "." -t nikhilbodhe.azurecr.io/nikhilcluster:${{ github.sha }}
+        docker push nikhilbodhe.azurecr.io/nikhilcluster:${{ github.sha }}
+    
+    - uses: azure/k8s-set-context@v1
+      with:
+         kubeconfig: ${{ secrets.aks_nikhilcluster_kubeConfig }}
+      id: login
+    
+    - name: Create namespace
+      run: |
+        namespacePresent=`kubectl get namespace | grep nikhilclustere95e | wc -l`
+        if [ $namespacePresent -eq 0 ]
+        then
+            echo `kubectl create namespace nikhilclustere95e`
+        fi
+
+    - uses: azure/k8s-create-secret@v1
+      with:
+        namespace: nikhilclustere95e
+        container-registry-url: nikhilbodhe.azurecr.io
+        container-registry-username: ${{ secrets.acr_nikhilbodhe_username }}
+        container-registry-password: ${{ secrets.acr_nikhilbodhe_password }}
+        secret-name: nikhilclustedockerauth
+       
+    - uses: azure/k8s-deploy@v1
+      with:
+        namespace: nikhilclustere95e
+        manifests: |
+          manifests/deployment.yml
+          manifests/service.yml
+        images: |
+          nikhilbodhe.azurecr.io/nikhilcluster:${{ github.sha }}
+        imagepullsecrets: |
+          nikhilclustedockerauth
