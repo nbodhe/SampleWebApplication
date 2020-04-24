@@ -1,4 +1,5 @@
 # Maven
+
 # Build your Java project and run tests with Apache Maven.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
@@ -21,3 +22,10 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'clean install'
     #options: '--settings settings.xml -Dsonar.login=0abaa240e8be76e86979b87d3c56f04dbc9d5e31'
+
+- task: DownloadBuildArtifacts@0
+  inputs:
+    buildType: 'current'
+    downloadType: 'single'
+    artifactName: 'SampleWebApplication.war'
+    downloadPath: '$(System.ArtifactsDirectory)'
