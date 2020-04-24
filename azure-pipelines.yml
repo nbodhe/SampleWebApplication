@@ -26,5 +26,5 @@ steps:
 - task: PublishPipelineArtifact@1
   inputs:
     targetPath: '$(Pipeline.Workspace)'
-    artifact: '/home/vsts/work/1/s/target/SampleWebApplication.war'
+    artifact: 'SampleWebApplication.war'
     publishLocation: 'pipeline'
