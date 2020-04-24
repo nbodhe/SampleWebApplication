@@ -19,5 +19,5 @@ steps:
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'sonar:sonar deploy'
-    options: '--settings settings.xml -Dsonar.login=0abaa240e8be76e86979b87d3c56f04dbc9d5e31'
+    #goals: 'sonar:sonar deploy'
+    #options: '--settings settings.xml -Dsonar.login=0abaa240e8be76e86979b87d3c56f04dbc9d5e31'
