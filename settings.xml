@@ -3,7 +3,7 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd">
   <servers>
-    <server>
+   <!-- <server>
       <id>nexus-snapshots</id>
       <username>admin</username>
       <password>admin123</password>
@@ -12,6 +12,11 @@
       <id>nexus-releases</id>
       <username>admin</username>
       <password>admin123</password>
+    </server> -->
+    <server>
+      <id>myproj1</id>
+      <username>nikhilbodhemyorg</username>
+      <password>fl5o5zrvpfdetnkkiwzsklr4ci7jvtsu4pkayrcosbchvz3zggka</password>
     </server>
   </servers>
   <pluginGroups>
