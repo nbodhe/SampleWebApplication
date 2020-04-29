@@ -32,9 +32,8 @@
       </plugins>
     </pluginManagement>
   </build>
-  <distributionManagement>
-    
-    <repository>
+  <distributionManagement>  
+  <repository>
   <id>myproj1</id>
   <url>https://pkgs.dev.azure.com/nikhilbodhemyorg/myproj1/_packaging/myproj1/maven/v1</url>
   <releases>
@@ -43,8 +42,8 @@
   <snapshots>
     <enabled>true</enabled>
   </snapshots>
-</repository>
-    <--
+  </repository>
+    <!--
     <snapshotRepository>
       <id>nexus-snapshots</id>
       <url>http://52.224.219.77:8081/repository/maven-snapshots/</url>
