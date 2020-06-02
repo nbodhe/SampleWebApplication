@@ -7,7 +7,7 @@ pipeline{
     stages{
         stage("checkout"){
             steps{
-                git https://github.com/nbodhe/SampleWebApplication.git
+                git 'https://github.com/nbodhe/SampleWebApplication.git'
                 
                 echo "BRANCH NAME: ${env.BRANCH_NAME}"
                 
