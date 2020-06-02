@@ -15,7 +15,7 @@ pipeline{
         }
         stage("build"){
             steps{
-                sh 'printenv'
+                sh "${env.branch}"
             }
         }
     }
