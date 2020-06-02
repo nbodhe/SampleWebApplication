@@ -15,7 +15,7 @@ pipeline{
         }
         stage("build"){
             steps{
-                sh "${env.branch}"
+                sh "echo ${env.branch}"
             }
         }
     }
