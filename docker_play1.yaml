@@ -1,0 +1,14 @@
+---
+
+- name: mywebapp docker container
+  hosts: all
+  connection: local
+  tasks:
+    - docker_container:
+        name: mywebapp
+        state: absent
+    - docker_container:
+        name: mywebapp
+        image: nikhil/webapp
+        ports:
+          - 9999:8080
