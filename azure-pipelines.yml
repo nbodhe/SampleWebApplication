@@ -21,7 +21,7 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'clean install deploy'
-    options: '--settings settings.xml' # -Dsonar.login=0abaa240e8be76e86979b87d3c56f04dbc9d5e31'
+    #options: '--settings settings.xml' # -Dsonar.login=0abaa240e8be76e86979b87d3c56f04dbc9d5e31'
 
 - task: PublishPipelineArtifact@1
   inputs:
