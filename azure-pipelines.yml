@@ -7,7 +7,7 @@
 trigger:
 - master
 
-pool: 'awspool'
+pool: 'default'
 #  vmImage: 'ubuntu-latest'
 
 steps:
