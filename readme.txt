@@ -1,2 +1,2 @@
 testing jenkins multibranch pipeline
-test1
+test2
