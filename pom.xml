@@ -51,7 +51,7 @@
 	<snapshotRepository>
 		<id>samplewebapp</id>
 		<name>Internal snapshots</name>
-		<url>http://192.168.0.102:8081/repository/samplewebapp/</url>
+		<url>http://nexus:8081/nexus/content/repositories/SampleWebApplication/</url>
 	</snapshotRepository>
 </distributionManagement>
 </project>
